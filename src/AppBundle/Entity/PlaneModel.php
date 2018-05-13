@@ -10,11 +10,18 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="plane_model")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PlaneModelRepository")
  */
+
 class PlaneModel
 {
     /*
    * Adding personal methods / variables
    */
+
+    public function __toString()
+    {
+        // Return the PlaneModel object with "[MODEL]" format, when __toString is called.
+        return $this->model;
+    }
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="plane")

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="900449df-e8de-4e11-9ef0-fc660f01d729" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/review/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/PlaneModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/PlaneModel.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -56,42 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="PlaneModelController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PlaneModelController.php">
+      <file leaf-file-name="PlaneModel.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlaneModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-544">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-              <folding>
-                <element signature="e#40#72#0#PHP" expanded="true" />
-                <element signature="e#733#761#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReviewController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReviewController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#40#73#0#PHP" expanded="true" />
-                <element signature="e#624#642#1#PHP" expanded="true" />
-                <element signature="e#686#710#0#PHP" expanded="true" />
-                <element signature="e#969#991#1#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/review/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-              </folding>
+            <state relative-caret-position="576">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -114,7 +82,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Review.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Site.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/PlaneModel.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Reservation.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Flight.php" />
@@ -122,8 +89,9 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ListingController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/listing/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PlaneModelController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/review/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReviewController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/review/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/PlaneModel.php" />
       </list>
     </option>
   </component>
@@ -178,11 +146,11 @@
       <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1018" />
-    <option name="y" value="711" />
-    <option name="width" value="2020" />
-    <option name="height" value="1277" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1253" />
+    <option name="y" value="242" />
+    <option name="width" value="2018" />
+    <option name="height" value="1241" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -260,6 +228,13 @@
               <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="flyaround" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flyaround" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -316,18 +291,18 @@
       <workItem from="1525358121655" duration="4321000" />
       <workItem from="1525362814207" duration="416000" />
       <workItem from="1526210562237" duration="3009000" />
-      <workItem from="1526215985832" duration="3846000" />
+      <workItem from="1526215985832" duration="5055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24117000" />
+    <option name="totallyTimeSpent" value="25326000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="1" width="2738" height="1711" extended-state="6" />
+    <frame x="1253" y="242" width="2018" height="1241" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22331871" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003655" side_tool="true" weight="0.36532694" />
@@ -504,13 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlaneModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Reservation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -589,17 +557,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/review/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="832">
+          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReviewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#40#73#0#PHP" expanded="true" />
+            <element signature="e#624#642#1#PHP" expanded="true" />
+            <element signature="e#686#710#0#PHP" expanded="true" />
+            <element signature="e#969#991#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PlaneModelController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
+        <state relative-caret-position="320">
           <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
@@ -608,16 +589,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReviewController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlaneModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#40#73#0#PHP" expanded="true" />
-            <element signature="e#624#642#1#PHP" expanded="true" />
-            <element signature="e#686#710#0#PHP" expanded="true" />
-            <element signature="e#969#991#1#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="576">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
