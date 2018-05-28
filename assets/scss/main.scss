@@ -1,0 +1,13 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+$fa-font-path: "~font-awesome/fonts";
+
+@import '~bootstrap/scss/bootstrap';
+
+
+$brand-primary: #f8f9fa;
+
+body{
+  color: $brand-primary;
+  background-color: cadetblue;
+}

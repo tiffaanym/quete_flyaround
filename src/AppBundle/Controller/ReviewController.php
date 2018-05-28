@@ -17,7 +17,8 @@ class ReviewController extends Controller
 {
 
     /**
-     * Show reviews .
+     * Lists all review entities.
+     *
      * @Route("/", name="review_index")
      * @Method("GET")
      */
@@ -43,4 +44,59 @@ class ReviewController extends Controller
     public function newAction() {
         return $this->render('review/new.html.twig');
     }
+
+
+    /**
+     * Finds and displays a review entity.
+     *
+     * @Route("/{id}", name="review_show")
+     * @Method("GET")
+     */
+    public function showAction(Review $review)
+    {
+        $deleteForm = $this->createDeleteForm($review);
+
+        return $this->render('review/show.html.twig', array(
+            'review' => $review,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+
+    /**
+     * Displays a form to edit an existing review.
+     *
+     * @Route("/{id}/edit", name="review_edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editAction(Request $request, Review $review)
+    {
+        $deleteForm = $this->createDeleteForm($reservation);
+        $editForm = $this->createForm('AppBundle\Form\Reviewtype', $review);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('review_edit', array('id' => $review->getId()));
+        }
+
+        return $this->render('review/edit.html.twig', array(
+            'review' => $review,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+
+
+
+
+
+
+
+
 }
+
+
+
