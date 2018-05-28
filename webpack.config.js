@@ -10,5 +10,3 @@ Encore
     .enableSassLoader();
 
 module.exports = Encore.getWebpackConfig();
-
-

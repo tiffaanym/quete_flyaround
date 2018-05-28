@@ -1,13 +1,20 @@
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
-$fa-font-path: "~font-awesome/fonts";
-
 @import '~bootstrap/scss/bootstrap';
 
 
 $brand-primary: #f8f9fa;
+$main-color: #9FCDD0;
 
 body{
   color: $brand-primary;
-  background-color: cadetblue;
+  background-color: $main-color;
+}
+
+a {
+  color: darken($main-color, 30%);
+}
+
+a:hover {
+  color: darken($main-color, 40%);
 }
