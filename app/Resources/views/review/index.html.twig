@@ -21,7 +21,7 @@
             <tr>
                 <td><a href="{{ path('review_show', { 'id': review.id }) }}">{{ review.id }}</a></td>
                 <td>{{ review.text }}</td>
-                <td>{% if review.publicationDate %}{{ review.publicationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if review.publicationDate %}{{ review.publicationDate|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ review.note }}</td>
                 <td>
                     <ul>

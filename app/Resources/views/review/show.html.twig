@@ -4,7 +4,7 @@
 
     {% include 'default/index.html.twig' %}
 
-    <h1>Review</h1>
+    <h1>Details Review</h1>
 
     <table>
         <tbody>
@@ -13,12 +13,20 @@
             <td>{{ review.id }}</td>
         </tr>
         <tr>
-            <th>Model</th>
-            <td>{{ planeModel.model }}</td>
+            <th>Author</th>
+            <td>{{ review.reviewAuthor }}</td>
         </tr>
         <tr>
-            <th>Manufacturer</th>
-            <td>{{ planeModel.manufacturer }}</td>
+            <th>Text</th>
+            <td>{{ review.text }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{ review.publicationDate|date('Y-m-d') }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ review.note }}</td>
         </tr>
         </tbody>
     </table>
@@ -26,6 +34,9 @@
     <ul>
         <li>
             <a href="{{ path('review_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('review_edit', { 'id': review.id }) }}">Edit</a>
         </li>
     </ul>
 {% endblock %}

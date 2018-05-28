@@ -2,10 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\ReviewType;
 use AppBundle\Entity\Review;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Listing controller.
@@ -41,8 +43,28 @@ class ReviewController extends Controller
      * @Method({"GET", "POST"})
      * */
 
-    public function newAction() {
-        return $this->render('review/new.html.twig');
+    public function newAction(Request $request)
+    {
+        $review = new Review();
+        $form = $this->createForm(ReviewType::class, $review);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($review);
+            $em->flush();
+
+            // You can use too :
+            // return $this->redirect($this->generateUrl('review_show', array('id' => $review->getId())))
+
+            return $this->redirectToRoute('review_show', array('id' => $review->getId()));
+        }
+
+        return $this->render('review/new.html.twig', array(
+            'review' => $review,
+            'form' => $form->createView(),
+        ));
     }
 
 
@@ -62,17 +84,16 @@ class ReviewController extends Controller
         ));
     }
 
-
     /**
-     * Displays a form to edit an existing review.
+     * Displays a form to edit an existing review entity.
      *
      * @Route("/{id}/edit", name="review_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Review $review)
     {
-        $deleteForm = $this->createDeleteForm($reservation);
-        $editForm = $this->createForm('AppBundle\Form\Reviewtype', $review);
+        $deleteForm = $this->createDeleteForm($review);
+        $editForm = $this->createForm('AppBundle\Form\ReviewType', $review);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -88,15 +109,39 @@ class ReviewController extends Controller
         ));
     }
 
+    /**
+     * Deletes a review entity.
+     *
+     * @Route("/{id}", name="review_delete")
+     * @Method("DELETE")
+     */
+    public function deleteAction(Request $request, review $review)
+    {
+        $form = $this->createDeleteForm($review);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($review);
+            $em->flush();
+        }
 
+        return $this->redirectToRoute('review_index');
+    }
 
-
-
-
-
-
+    /**
+     * Creates a form to delete a review entity.
+     *
+     * @param review $review The review entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm(review $review)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('review_delete', array('id' => $review->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
+            ;
+    }
 }
-
-
-
